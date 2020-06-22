@@ -1,0 +1,18 @@
+section {
+    margin: 20px;
+    background-color: oldlace;
+    border: solid thin grey;
+    display: flexbox;
+    padding: 10px;
+}
+
+div {
+    margin: 10px;
+    border: solid thin rgb(212, 208, 208);
+    padding: 10px;
+    background-color: blanchedalmond;
+}
+
+button {
+    margin-right: 10px;
+}
