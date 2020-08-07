@@ -41,6 +41,24 @@
       function handlePrintList() {
         printList();
       }
+
+      function handleInsertBTSNode(value) {
+        binaryNodeValue.value = '';
+        insertBTS(value);
+      }
+
+      function handleMinValue() {
+        console.log(minBTSValue());
+      }
+
+      function handleMaxValue() {
+        console.log(maxBTSValue());
+      }
+      
+      function handleSearchRequest(value) {
+        binaryNodeValue.value = '';
+        console.log(searchBTS(value));
+      }
     </script>
   </head>
 
@@ -69,6 +87,25 @@
             </button> -->
         </div>
 
+      <div>
+        <span>Enter values to create Binary Tree and perform various operations [Assumption root node has value 100]</span>
+        <div>
+          <input type="text" id="binaryNodeValue" />
+          <button onclick="handleInsertBTSNode(binaryNodeValue.value)">
+            Insert
+          </button>
+          <button onclick="handleMinValue()">
+            Console Min value
+          </button>
+          <button onclick="handleMaxValue()">
+            Console Max value
+          </button>
+          <button onclick="handleSearchRequest(binaryNodeValue.value)">
+            Console Search Node
+          </button>
+        </div>
+        
+      </div>
       <div>
         <span>This button will validate paranthese</span>
         <input type="text" id="parentheseformate" value="[{()}]" />
@@ -255,6 +292,7 @@
     <script src="src/data-structure/stack.js"></script>
     <script src="src/data-structure/queue.js"></script>
     <script src="src/data-structure/linked-list.js"></script>
+    <script src="src/data-structure/binary-search-tree.js"></script>
   </body>
   </body>
 </html>
