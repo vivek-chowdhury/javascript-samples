@@ -1,134 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Practice</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function handleParenthesesValidation(value) {
+        parseParentheses(value);
+      }
 
-<body>
+      function handleGenerate(value) {
+        generateBinaryNumbers(value);
+      }
+
+      function handleInsertAtHead(value) {
+        linklistValue.value = '';
+        if(value.trim().length > 0) {
+            insertAtHead(value);
+        }
+      }
+
+      function handleInsertAtTail(value) {
+        linklistValue.value = '';
+        if(value.trim().length > 0) {
+            insertAtTail(value);
+        }
+      }
+
+    //   function handleInsertAfter(value, newValue) {
+    //     linklistValue.value = '';
+    //     insertAfter(value, newValue);
+    //   }
+
+      function handleReverseList() {
+        reverseList();
+      }
+
+      function handlePrintList() {
+        printList();
+      }
+    </script>
+  </head>
+
+  <body>
     <section>
-        <h2>Pollyfills</h2>
-        <p><b>Output will be visible in console window</b></p>
         <div>
-            <span>This button will initiate CustomPromise which is sample pollyfill</span>
-            <button onclick="startCustomPromise()">Custom Promise</button>
+            <span>Enter value to node in link list</span>
+            <input type="text" id="linklistValue" value="" />
+            <button onclick="handleInsertAtHead(linklistValue.value)">
+                Insert at Head
+            </button>
+            <button onclick="handleInsertAtTail(linklistValue.value)">
+                Insert at Tail
+            </button>
+            <!-- <button onclick="handleInsertAfter(linklistValue.value)">
+                Insert after
+            </button> -->
+            <button onclick="handleReverseList()">
+                Reverse List
+            </button>
+            <button onclick="handlePrintList()">
+                Print List
+            </button>
+            <!-- <button onclick="handleParenthesesValidation(parentheseformate.value)">
+                Delete Node
+            </button> -->
         </div>
 
-        <div>
-            <span>This button will initiate Custom Binding which is sample pollyfill</span>
-            <button onclick="startCustomBinding()">Custom Binding</button>
-        </div>
+      <div>
+        <span>This button will validate paranthese</span>
+        <input type="text" id="parentheseformate" value="[{()}]" />
+        <button onclick="handleParenthesesValidation(parentheseformate.value)">
+          Validate
+        </button>
+      </div>
 
-        <div>
-            <span>This button will initiate Custom Reduce which is sample pollyfill</span>
-            <button onclick="startCustomReduce()">Custom Reduce</button>
-        </div>
+      <div>
+        <span>This button will Generate Binary numbers</span>
+        <input type="text" id="generateBinary" value="10" />
+        <button onclick="handleGenerate(generateBinary.value)">
+          Generate Binary
+        </button>
+      </div>
 
-        <div>
-            <span>This button will initiate Custom Map which is sample pollyfill</span>
-            <button onclick="startCustomMap()">Custom Map</button>
-        </div>
+      <h2>Pollyfills</h2>
+      <p><b>Output will be visible in console window</b></p>
+      <div>
+        <span
+          >This button will initiate CustomPromise which is sample
+          pollyfill</span
+        >
+        <button onclick="startCustomPromise()">Custom Promise</button>
+      </div>
 
-        <div>
-            <span>This button will initiate Custom Filter which is sample pollyfill</span>
-            <button onclick="runCustomFilter()">Custom Filter</button>
-        </div>
+      <div>
+        <span
+          >This button will initiate Custom Binding which is sample
+          pollyfill</span
+        >
+        <button onclick="startCustomBinding()">Custom Binding</button>
+      </div>
 
-        <div>
-            <span>This button will initiate Custom Find which is sample pollyfill</span>
-            <button onclick="startFindPolyfill()">Custom Find</button>
-        </div>
+      <div>
+        <span
+          >This button will initiate Custom Reduce which is sample
+          pollyfill</span
+        >
+        <button onclick="startCustomReduce()">Custom Reduce</button>
+      </div>
 
-        <div>
-            <span>This button will initiate Debouncing</span>
-            <input type="text" onkeyup="debounceListener()" />
-        </div>
+      <div>
+        <span
+          >This button will initiate Custom Map which is sample pollyfill</span
+        >
+        <button onclick="startCustomMap()">Custom Map</button>
+      </div>
 
-        <div>
-            <span>This button will initiate Throttling</span>
-            <input type="text" onkeyup="debounceListener()" />
-        </div>
+      <div>
+        <span
+          >This button will initiate Custom Filter which is sample
+          pollyfill</span
+        >
+        <button onclick="runCustomFilter()">Custom Filter</button>
+      </div>
+
+      <div>
+        <span
+          >This button will initiate Custom Find which is sample pollyfill</span
+        >
+        <button onclick="startFindPolyfill()">Custom Find</button>
+      </div>
+
+      <div>
+        <span>This button will initiate Debouncing</span>
+        <input type="text" onkeyup="debounceListener()" />
+      </div>
+
+      <div>
+        <span>This button will initiate Throttling</span>
+        <input type="text" onkeyup="debounceListener()" />
+      </div>
     </section>
     <section>
-        <h2>Sorting</h2>
-        <p><b>
-                <u> NOTE: </u>Default sort() in JavaScript uses <u>Insertion sort</u> by V8 Engine of Chrome and
-                <u>Merge sort</u> by
-                Mozilla
-                Firefox and Safari.
-            </b></p>
-        <div>
-            <details>
-                <summary><b>Bubble Sort</b></summary>
-                <p>Compare the first item with the second. If the first item is bigger than the second item than you
-                    need to swap them so that the bigger one stays in the second position and then compare second with
-                    third item and so on.
-                    We keep doing it. until we hit the last element of the array. In that way we bubble up the biggest
-                    item of the array to the right most position of the array.</p>
+      <h2>Sorting</h2>
+      <p>
+        <b>
+          <u> NOTE: </u>Default sort() in JavaScript uses
+          <u>Insertion sort</u> by V8 Engine of Chrome and <u>Merge sort</u> by
+          Mozilla Firefox and Safari.
+        </b>
+      </p>
+      <div>
+        <details>
+          <summary><b>Bubble Sort</b></summary>
+          <p>
+            Compare the first item with the second. If the first item is bigger
+            than the second item than you need to swap them so that the bigger
+            one stays in the second position and then compare second with third
+            item and so on. We keep doing it. until we hit the last element of
+            the array. In that way we bubble up the biggest item of the array to
+            the right most position of the array.
+          </p>
 
-                <button onclick="startBubbleSort(bubble.value)">Bubble Sort</button>
-                <input id="bubble"> <br />(comma seperated value (optional) if not given than it will take default
-                array)
-            </details>
-        </div>
+          <button onclick="startBubbleSort(bubble.value)">Bubble Sort</button>
+          <input id="bubble" /> <br />(comma seperated value (optional) if not
+          given than it will take default array)
+        </details>
+      </div>
 
-        <div>
-            <details>
-                <summary><b>Merge Sort</b></summary>
-                <p>It belongs to the divide and conquer, and comparison algorithm categories. It breaks the main list
-                    into multiple sublists/chunks until it’s no longer possible to separate the list more. Then all of
-                    this sections that we’ve created should be merged in a sorted order.
-                </p>
+      <div>
+        <details>
+          <summary><b>Merge Sort</b></summary>
+          <p>
+            It belongs to the divide and conquer, and comparison algorithm
+            categories. It breaks the main list into multiple sublists/chunks
+            until it’s no longer possible to separate the list more. Then all of
+            this sections that we’ve created should be merged in a sorted order.
+          </p>
 
-                <button onclick="startMergeSort(merge.value)">Merge Sort</button>
-                <input id="merge"> <br />(comma seperated value (optional) if not given than it will take default array)
-            </details>
-        </div>
+          <button onclick="startMergeSort(merge.value)">Merge Sort</button>
+          <input id="merge" /> <br />(comma seperated value (optional) if not
+          given than it will take default array)
+        </details>
+      </div>
 
-        <div>
-            <details>
-                <summary><b>Selection Sort</b></summary>
-                <p> This is very simple. Go through the array, find the index of the lowest element swap the lowest
-                    element with the first element.
-                    Hence first element is the lowest element in the array.</p>
+      <div>
+        <details>
+          <summary><b>Selection Sort</b></summary>
+          <p>
+            This is very simple. Go through the array, find the index of the
+            lowest element swap the lowest element with the first element. Hence
+            first element is the lowest element in the array.
+          </p>
 
-                <button onclick="startSelectionSort(selection.value)">Selection Sort</button>
-                <input id="selection"> <br />(comma seperated value (optional) if not given than it will take default
-                array)
-            </details>
-        </div>
+          <button onclick="startSelectionSort(selection.value)">
+            Selection Sort
+          </button>
+          <input id="selection" /> <br />(comma seperated value (optional) if
+          not given than it will take default array)
+        </details>
+      </div>
 
-        <div>
-            <details>
-                <summary><b>Insertion Sort</b></summary>
-                <p> Insertion sort is a very simple comparison sort used for sorting an array (or list). A comparison
-                    sort is any sorting algorithm that compares the current value that you are trying to place with
-                    other values within the same array/list that’s being sorted. It does this by working with one item
-                    at a time, and iteratively places each item into the right order in the array.</p>
+      <div>
+        <details>
+          <summary><b>Insertion Sort</b></summary>
+          <p>
+            Insertion sort is a very simple comparison sort used for sorting an
+            array (or list). A comparison sort is any sorting algorithm that
+            compares the current value that you are trying to place with other
+            values within the same array/list that’s being sorted. It does this
+            by working with one item at a time, and iteratively places each item
+            into the right order in the array.
+          </p>
 
-                <button onclick="startInsertionSort(insertion.value)">Insertion Sort</button>
-                <input id="insertion"> <br />(comma seperated value (optional) if not given than it will take default
-                array)
-            </details>
-        </div>
+          <button onclick="startInsertionSort(insertion.value)">
+            Insertion Sort
+          </button>
+          <input id="insertion" /> <br />(comma seperated value (optional) if
+          not given than it will take default array)
+        </details>
+      </div>
 
-        <div>
-            <details>
-                <summary><b>Quick Sort</b></summary>
-                <p> It is good for sorting large data sets. Quick sort follows Divide and Conquer algorithm. It is
-                    dividing elements in to smaller parts based
-                    on some condition and performing the sort operations on those divided smaller parts. Hence, it works
-                    well for large datasets. So, here are the steps how Quick sort works in simple words.
-                </p>
+      <div>
+        <details>
+          <summary><b>Quick Sort</b></summary>
+          <p>
+            It is good for sorting large data sets. Quick sort follows Divide
+            and Conquer algorithm. It is dividing elements in to smaller parts
+            based on some condition and performing the sort operations on those
+            divided smaller parts. Hence, it works well for large datasets. So,
+            here are the steps how Quick sort works in simple words.
+          </p>
 
-                <button onclick="startQuickSort(quick.value)">Quick Sort</button>
-                <input id="quick"> <br />(comma seperated value (optional) if not given than it will take default array)
-            </details>
-        </div>
+          <button onclick="startQuickSort(quick.value)">Quick Sort</button>
+          <input id="quick" /> <br />(comma seperated value (optional) if not
+          given than it will take default array)
+        </details>
+      </div>
     </section>
     <script src="./src/pollyfills/bind-pollyfill.js"></script>
     <script src="src/pollyfills/promise-polyfill.js"></script>
@@ -142,6 +252,9 @@
     <script src="src/sorting/quick-sort.js"></script>
     <script src="src/pollyfills/debouncing.js"></script>
     <script src="src/pollyfills/find-polyfill.js"></script>
-</body>
-
+    <script src="src/data-structure/stack.js"></script>
+    <script src="src/data-structure/queue.js"></script>
+    <script src="src/data-structure/linked-list.js"></script>
+  </body>
+  </body>
 </html>
