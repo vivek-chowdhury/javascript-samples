@@ -1,4 +1,5 @@
 Array.prototype.customReduce = function (fn, acc) {
+    console.log(acc, '------------');
     let _acc = (acc) ? acc : this[0],
         index = (acc) ? 0 : 1;
     for (let i = index; i < this.length; i++) {
@@ -17,3 +18,5 @@ function startCustomReduce() {
     console.log('Inbuild method : ', numbers.reduce(calculate));
     console.log('Custom Method : ', numbers.customReduce(calculate));
 }
+
+startCustomReduce();

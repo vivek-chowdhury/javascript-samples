@@ -117,16 +117,16 @@ class BinarySearchTree {
 }
 
 let bts = new BinarySearchTree("100");
-// bts.insert(50);
-// bts.insert(110);
-// bts.insert(115);
-// bts.insert(75);
-// bts.insert(45);
-// bts.insert(122);
-// bts.insert(132);
-// bts.insert(102);
+bts.insert(50);
+bts.insert(110);
+bts.insert(115);
+bts.insert(75);
+bts.insert(45);
+bts.insert(122);
+bts.insert(132);
+bts.insert(102);
 
-// console.log(bts);
+console.log(bts);
 // bts.search(110);
 // bts.inOrderPrint(bts.root);
 // console.log(bts.search(50));

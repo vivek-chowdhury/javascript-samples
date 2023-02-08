@@ -23,21 +23,22 @@ let personList = [{
 
 Array.prototype.customFilter = function (fn, ...args) {
     let ref = args.slice(1),
-        nList = [];
+    nList = [];
     for (let i = 0; i < this.length; i++) {
         const o = fn.call(ref, this[i], i, this);
         if (o) {
-            nList.push(o);
+            nList.push(this[i]);
         }
     }
     return nList;
 }
 
 function runCustomFilter() {
-
-    let x = personList.filter((a) => {
+    let x = personList.customFilter((a) => {
         return a.id % 2 == 0;
     });
     console.log(x);
 
 }
+
+// runCustomFilter();

@@ -18,3 +18,4 @@ function startFindPolyfill() {
     });
     console.log(result);
 }
+// startFindPolyfill();
